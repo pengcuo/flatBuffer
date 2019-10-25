@@ -89,14 +89,12 @@ int main(int argc, const char *argv[])
 {
     // insert code here
 
-    // 序列化
     serialize();
 
     flatbuffers::SaveFile("layer.bin",
                           reinterpret_cast<char *>(build_data.GetBufferPointer()),
                           build_data.GetSize(), true);
 
-    // 反序列化
     deserialize();
 
     return 0;
